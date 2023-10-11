@@ -1,6 +1,6 @@
 //purposely bad code so students can fix it - can make it worse
 
-import "./style.css";
+import "./style.css"; 
 
 const dino = document.getElementById("dino");
 const cactus = document.getElementById("cactus");
