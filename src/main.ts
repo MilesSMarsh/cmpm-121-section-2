@@ -10,10 +10,10 @@ const scoreText = document.getElementById("scoreText");
 let score = 0;
 SetText("click to start!");
 
-let isJumping = false;
-let gameOver = true;
+let isJumping: boolean = false;
+let gameOver: boolean = true;
 
-document.addEventListener("mousedown", () => jump());
+document.addEventListener("mousedown", jump);
 
 setInterval(function () {
   Main();
@@ -29,13 +29,11 @@ function Main() {
 }
 
 function jump() {
-  if (gameOver === false) {
-    if (isJumping == false) {
-      isJumping = true;
-      dino?.classList.add("jump");
-      setTimeout(RemoveJump, 500);
-    }
-  } else {
+  if (gameOver == false && isJumping == false) {
+    isJumping = true;
+    dino?.classList.add("jump");
+    setTimeout(RemoveJump, 500);
+  } else if (gameOver == true){
     StartGame();
   }
 }
@@ -97,6 +95,7 @@ function CheckGameOver() {
     }
   }
 }
+
 
 function StartGame() {
   console.log("Game started!");
